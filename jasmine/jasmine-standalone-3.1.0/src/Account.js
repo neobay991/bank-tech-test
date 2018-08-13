@@ -8,7 +8,7 @@ Account.prototype.deposit = function(amount) {
   this._customerBalance.push(amount);
 }
 
-Account.prototype.balance = function(amount) {
+Account.prototype.balance = function() {
   var counter = 0,
   balance = 0;
 
