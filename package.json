@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "eslint": "^5.3.0",
+    "jasmine-node": "^1.15.0",
     "karma-coverage": "^1.1.2"
   },
   "devDependencies": {
@@ -18,7 +19,7 @@
     "webpack": "^4.16.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover jasmine/jasmine-standalone-3.1.0/spec/*.js"
   },
   "repository": {
     "type": "git",
