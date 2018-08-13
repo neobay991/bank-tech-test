@@ -19,7 +19,7 @@ Account.prototype.withdraw = function(amount) {
   this.updateBalance(amount);
 }
 
-Account.prototype.timeStamp = function(amount) {
+Account.prototype.timeStamp = function() {
   var timestamp = new Date();
   this._customerDepositWithdrawalTimeStamp.push(timestamp);
 }
@@ -47,15 +47,13 @@ Account.prototype.statement = function() {
   var output = "date || credit / debit || balance",
    entry;
 
-  console.log(output);
-
   for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
-    for (var i = 1; i < this._customerDeposit.length; ++i) {
-      for (var i = 1; i < this._customerBalance.length; ++i) {
-        entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
-         console.log(entry);
+    for (var y = 1; y < this._customerDeposit.length; ++y) {
+      for (var x = 1; x < this._customerBalance.length; ++x) {
+        entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[y] + " " + this._customerBalance[x])
+         // console.log(entry);
       }
-      return entry
     }
   }
+  return output + " " + entry;
 }

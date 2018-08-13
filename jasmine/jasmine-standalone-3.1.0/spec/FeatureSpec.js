@@ -36,7 +36,7 @@ describe("Feature Test: ", function() {
       user.depositMoney(1000);
       user.depositMoney(2000);
       user.withdrawMoney(-500);
-      expect(user.getAccountStatment()).toBe("Mon Aug 13 2018 00:00:00 GMT+0100 (British Summer Time) -500 2500");
+      expect(user.getAccountStatment()).toBe("date || credit / debit || balance Mon Aug 13 2018 00:00:00 GMT+0100 (British Summer Time) -500 2500");
     });
   });
 
