@@ -14,7 +14,7 @@ describe("Unit Test: ", function () {
 
     it('A User can deposit money into their account', function() {
       account.deposit(10);
-      expect(account._customerBalance).toEqual(10);
+      expect(account.balance()).toEqual(10);
     });
   });
 
