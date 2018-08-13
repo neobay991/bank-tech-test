@@ -11,7 +11,7 @@ describe("Unit Test: ", function () {
 
   describe('User', function(){
     it('A User has an account with a zero balance', function() {
-      expect(user.account._customerBalance).toEqual(0);
+      expect(user._account._customerBalance).toEqual([0]);
     });
   });
 
