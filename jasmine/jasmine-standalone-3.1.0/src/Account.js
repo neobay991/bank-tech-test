@@ -44,12 +44,18 @@ Account.prototype.updateBalance = function(amount) {
 }
 
 Account.prototype.statement = function() {
-  var output = "date || credit / debit || balance";
+  var output = "date || credit / debit || balance",
+   entry;
+
+  console.log(output);
+
   for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
     for (var i = 1; i < this._customerDeposit.length; ++i) {
       for (var i = 1; i < this._customerBalance.length; ++i) {
-        return (this._customerDepositWithdrawalTimeStamp[i] + "||", this._customerDeposit[i] + "||", this._customerBalance[i]);
+        entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
+         console.log(entry);
       }
+      return entry
     }
   }
 }
