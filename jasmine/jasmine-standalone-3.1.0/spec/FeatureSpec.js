@@ -11,8 +11,8 @@ describe("Feature Test: ", function() {
 
   describe('Deposit money into account', function() {
     it('A User can deposit money into their account', function() {
-      user.deposit(10);
-      expect(account.getBalance()).toEqual(10);
+      user.depositMoney(10);
+      expect(user.getBalance()).toEqual(10);
     });
   });
 
