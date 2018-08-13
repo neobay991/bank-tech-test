@@ -1,0 +1,23 @@
+{
+  "name": "bank-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^5.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neobay991/bank-tech-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neobay991/bank-tech-test/issues"
+  },
+  "homepage": "https://github.com/neobay991/bank-tech-test#readme"
+}
