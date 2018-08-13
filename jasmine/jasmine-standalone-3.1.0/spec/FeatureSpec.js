@@ -1,6 +1,6 @@
 'use strict';
 
-describe("Feature Test: ", function () {
+describe("Feature Test: ", function() {
   var user;
   var account;
 
@@ -9,11 +9,11 @@ describe("Feature Test: ", function () {
     account = new Account();
   });
 
-  describe('Deposit money into account'), function(){
-    it('A User can deposit money into their account'), function() {
+  describe('Deposit money into account', function() {
+    it('A User can deposit money into their account', function() {
       user.deposit(10);
       expect(account.getBalance()).toEqual(10);
-    )};
-  )};
+    });
+  });
 
 });
