@@ -21,7 +21,7 @@ describe("Unit Test: ", function () {
 
     it('A User has an account with a balance of 500', function() {
       user.depositMoney(1000);
-      user.withdrawMoney(500);
+      user.withdrawMoney(-500);
       expect(user.getBalance()).toEqual(500);
     });
   });

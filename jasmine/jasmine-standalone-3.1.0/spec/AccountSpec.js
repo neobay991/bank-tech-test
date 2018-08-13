@@ -24,7 +24,7 @@ describe("Unit Test: ", function () {
 
     it('A withdrawal has a timestamp', function() {
       account.deposit(1000);
-      account.withdraw(500);
+      account.withdraw(-500);
       expect(account.balanceTimeStamp().length).toEqual(3);
     });
   });
