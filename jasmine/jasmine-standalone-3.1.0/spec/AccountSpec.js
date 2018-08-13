@@ -13,13 +13,19 @@ describe("Unit Test: ", function () {
     });
 
     it('A User can deposit money into their account', function() {
-      account.deposit(10);
-      expect(account.balance()).toEqual(10);
+      account.deposit(1000);
+      expect(account.balance()).toEqual(1000);
     });
 
     it('A deposit has a timestamp', function() {
-      account.deposit(10);
+      account.deposit(1000);
       expect(account.balanceTimeStamp().length).toEqual(2);
+    });
+
+    it('A withdrawal has a timestamp', function() {
+      account.deposit(1000);
+      account.withdrawal(500);
+      expect(account.balanceTimeStamp().length).toEqual(3);
     });
   });
 
