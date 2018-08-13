@@ -6,16 +6,18 @@ function Account() {
 }
 
 Account.prototype.deposit = function(amount) {
-  var timestamp = Date.now();
-
+  this.timeStamp();
   this._customerBalance.push(amount);
-  this._customerDepositWithdrawalTimeStamp.push(timestamp);
+
 }
 
 Account.prototype.withdraw = function(amount) {
-  var timestamp = Date.now();
-
+  this.timeStamp();
   this._customerBalance.push(amount);
+}
+
+Account.prototype.timeStamp = function(amount) {
+  var timestamp = Date.now();
   this._customerDepositWithdrawalTimeStamp.push(timestamp);
 }
 
