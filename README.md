@@ -36,7 +36,7 @@ Instructions to Start
 
 Browser console commands:
 * user = new User === to create a new User object
-* user.deposit(amount) === deposit money e.g. user.deposit(1000)
-* user.withdraw(-amount) === withdraw money e.g. user.withdraw(-500)
+* user.depositMoney(amount) === deposit money e.g. user.depositMoney(1000)
+* user.withdrawMoney(-amount) === withdraw money e.g. user.withdrawMoney(-500)
 * user.getBalance === get account balance
 * user.getAccountStatement == get account statement
