@@ -2,10 +2,14 @@
 
 function Account() {
   this._customerBalance = [0];
+  this._customerdepositTimeStamp = [Date.now()];
 }
 
 Account.prototype.deposit = function(amount) {
+  var timestamp = Date.now();
+
   this._customerBalance.push(amount);
+  this._customerdepositTimeStamp.push(timestamp);
 }
 
 Account.prototype.balance = function() {
@@ -16,4 +20,8 @@ Account.prototype.balance = function() {
     balance += this._customerBalance[counter];
   }
   return balance;
+}
+
+Account.prototype.depositTimeStamp = function() {
+  return this._customerdepositTimeStamp;
 }
