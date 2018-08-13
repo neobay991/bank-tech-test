@@ -16,7 +16,7 @@ describe("Feature Test: ", function() {
     });
   });
 
-  describe('Withdramw money from account', function() {
+  describe('Withdraw money from account', function() {
     it('A User can withdraw money from their account', function() {
       user.depositMoney(2000);
       user.withdrawMoney(-500);
