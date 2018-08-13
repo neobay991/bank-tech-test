@@ -28,6 +28,7 @@ describe("Feature Test: ", function() {
 
   describe('View Account statement', function() {
     it('A User can view an account statement of their account', function() {
+
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
       jasmine.clock().tick(50);
