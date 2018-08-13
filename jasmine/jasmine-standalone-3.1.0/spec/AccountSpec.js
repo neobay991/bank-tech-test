@@ -16,6 +16,12 @@ describe("Unit Test: ", function () {
       account.deposit(10);
       expect(account.balance()).toEqual(10);
     });
+
+    it('A deposit has a timestamp', function() {
+      account.deposit(10);
+      account._customerdepositTimeStamp.push("14/01/2012")
+      expect(account.depositTimeStamp()).toEqual("14/01/2012");
+    });
   });
 
 });
