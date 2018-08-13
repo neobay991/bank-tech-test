@@ -16,6 +16,10 @@ As a User,
 I would like to be able to Withdraw money from my account
 So I can spend it on something I like
 
+As a User,
+I would like to be able to see an Account statement from my account
+So I know how much money I have
+
 ```
 
 Tech stack
@@ -34,3 +38,4 @@ Instructions to Start
 ** user.deposit(amount) === deposit money e.g. user.deposit(1000)
 ** user.withdraw(-amount) === withdraw money e.g. user.withdraw(-500)
 ** user.getBalance === get account balance
+** user.getAccountStatement == get account statement
