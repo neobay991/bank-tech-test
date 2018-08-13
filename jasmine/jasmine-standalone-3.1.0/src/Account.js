@@ -2,14 +2,14 @@
 
 function Account() {
   this._customerBalance = [0];
-  this._customerdepositTimeStamp = [Date.now()];
+  this._customerDepositWithdrawalTimeStamp = [Date.now()];
 }
 
 Account.prototype.deposit = function(amount) {
   var timestamp = Date.now();
 
   this._customerBalance.push(amount);
-  this._customerdepositTimeStamp.push(timestamp);
+  this._customerDepositWithdrawalTimeStamp.push(timestamp);
 }
 
 Account.prototype.balance = function() {
@@ -22,6 +22,6 @@ Account.prototype.balance = function() {
   return balance;
 }
 
-Account.prototype.depositTimeStamp = function() {
-  return this._customerdepositTimeStamp;
+Account.prototype.balanceTimeStamp = function() {
+  return this._customerDepositWithdrawalTimeStamp;
 }

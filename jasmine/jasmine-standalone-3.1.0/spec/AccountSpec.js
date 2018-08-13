@@ -19,7 +19,7 @@ describe("Unit Test: ", function () {
 
     it('A deposit has a timestamp', function() {
       account.deposit(10);
-      expect(account.depositTimeStamp().length).toEqual(2);
+      expect(account.balanceTimeStamp().length).toEqual(2);
     });
   });
 
