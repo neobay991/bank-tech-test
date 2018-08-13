@@ -16,6 +16,6 @@ User.prototype.getBalance = function() {
   return this._account.balance();
 }
 
-User.prototype.getAccountStatment = function() {
+User.prototype.getAccountStatement = function() {
   return this._account.statement();
 }
