@@ -5,6 +5,7 @@ function Account() {
   this._customerDepositWithdrawalTimeStamp = [Date.now()];
   this._customerBalanceTemp = 0;
   this._customerBalance = [0];
+  this.temp1 =[];
 }
 
 Account.prototype.deposit = function(amount) {
@@ -48,12 +49,8 @@ Account.prototype.statement = function() {
    entry;
 
   for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
-    for (var y = 1; y < this._customerDeposit.length; ++y) {
-      for (var x = 1; x < this._customerBalance.length; ++x) {
-        entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[y] + " " + this._customerBalance[x])
-         // console.log(entry);
-      }
-    }
+    entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
+     // console.log(entry);
   }
   return output + " " + entry;
 }
