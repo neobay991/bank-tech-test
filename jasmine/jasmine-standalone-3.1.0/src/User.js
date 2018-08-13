@@ -12,6 +12,6 @@ User.prototype.withdrawMoney = function(amount) {
   this._account.withdraw(amount);
 }
 
-User.prototype.getBalance = function(amount) {
+User.prototype.getBalance = function() {
   return this._account.balance();
 }

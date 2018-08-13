@@ -2,11 +2,9 @@
 
 describe("Feature Test: ", function() {
   var user;
-  var account;
 
   beforeEach(function(){
     user = new User();
-    account = new Account();
   });
 
   describe('Deposit money into account', function() {
