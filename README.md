@@ -34,8 +34,8 @@ Instructions to Start
 * Open Terminal and type in 'open jasmine/jasmine-standalone-3.1.0/SpecRunner.html'
 * You can now run the tests and also use the same window's browser's console to interact with the app
 * Browser console commands:
-** user = new User === to create a new User object
-** user.deposit(amount) === deposit money e.g. user.deposit(1000)
-** user.withdraw(-amount) === withdraw money e.g. user.withdraw(-500)
-** user.getBalance === get account balance
-** user.getAccountStatement == get account statement
+- user = new User === to create a new User object
+- user.deposit(amount) === deposit money e.g. user.deposit(1000)
+- user.withdraw(-amount) === withdraw money e.g. user.withdraw(-500)
+- user.getBalance === get account balance
+- user.getAccountStatement == get account statement
