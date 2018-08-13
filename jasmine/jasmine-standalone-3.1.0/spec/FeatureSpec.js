@@ -27,8 +27,7 @@ describe("Feature Test: ", function() {
       user.depositMoney(1000);
       user.depositMoney(2000);
       user.withdrawMoney(-500);
-      expect(user.getAccountStatment()).toEqual(2500);
-      expect(user.getAccountStatment()).toContain("date || credit || debit || balance 14/01/2012 || || 500.00 || 2500.00 13/01/2012 || 2000.00 || || 3000.00 10/01/2012 || 1000.00 || || 1000.00");
+      expect(user.getAccountStatment()).toContain("date || credit || debit || balance Mon Aug 13 2018 17:30:47 GMT+0100 (British Summer Time)|| 1000|| 1000 ");
     });
   });
 
