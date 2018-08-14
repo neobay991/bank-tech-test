@@ -2,7 +2,7 @@
 
 function Account() {
   this._customerDeposit = [0];
-  this._customerDepositWithdrawalTimeStamp = [Date.now()];
+  this._customerDepositTimeStamp = [Date.now()];
   this._customerBalanceTemp = 0;
   this._customerBalance = [0];
   this._customerStatement = ["date || credit / debit || balance"];
@@ -29,7 +29,7 @@ Account.prototype.timeStamp = function() {
   var today = dd+'/'+mm+'/'+yyyy;
 
   var timestamp = today;
-  this._customerDepositWithdrawalTimeStamp.push(timestamp);
+  this._customerDepositTimeStamp.push(timestamp);
 }
 
 Account.prototype.balance = function() {
@@ -43,7 +43,7 @@ Account.prototype.balance = function() {
 }
 
 Account.prototype.balanceTimeStamp = function() {
-  return this._customerDepositWithdrawalTimeStamp;
+  return this._customerDepositTimeStamp;
 }
 
 Account.prototype.updateBalance = function(amount) {
@@ -54,9 +54,11 @@ Account.prototype.updateBalance = function(amount) {
 Account.prototype.statement = function() {
   var entry;
 
-  for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
-    entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
-     this._customerStatement.push(entry);
+  for (var i = 1; i < this._customerDepositTimeStamp.length; ++i) {
+    entry = (this._customerDepositTimeStamp[i] + " " +
+    this._customerDeposit[i] + " " + this._customerBalance[i]);
+
+    this._customerStatement.push(entry);
   }
 }
 
