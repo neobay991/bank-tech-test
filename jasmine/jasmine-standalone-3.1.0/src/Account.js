@@ -5,6 +5,7 @@ function Account() {
   this._customerDepositWithdrawalTimeStamp = [Date.now()];
   this._customerBalanceTemp = 0;
   this._customerBalance = [0];
+  this._customerStatement = ["date || credit / debit || balance"];
 }
 
 Account.prototype.deposit = function(amount) {
@@ -20,7 +21,14 @@ Account.prototype.withdraw = function(amount) {
 }
 
 Account.prototype.timeStamp = function() {
-  var timestamp = new Date();
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+  var today = dd+'/'+mm+'/'+yyyy;
+
+  var timestamp = today;
   this._customerDepositWithdrawalTimeStamp.push(timestamp);
 }
 
@@ -44,13 +52,15 @@ Account.prototype.updateBalance = function(amount) {
 }
 
 Account.prototype.statement = function() {
-  var output = "date || credit / debit || balance",
-   entry;
+  var entry;
 
-  console.log(output);
   for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
     entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
-     console.log(entry);
+     this._customerStatement.push(entry);
   }
-  return output + " " + entry;
+}
+
+Account.prototype.printStatement = function() {
+  this.statement();
+  return this._customerStatement;
 }

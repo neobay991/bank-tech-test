@@ -17,5 +17,5 @@ User.prototype.getBalance = function() {
 }
 
 User.prototype.getAccountStatement = function() {
-  return this._account.statement();
+  return this._account.printStatement();
 }
