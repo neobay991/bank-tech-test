@@ -5,7 +5,6 @@ function Account() {
   this._customerDepositWithdrawalTimeStamp = [Date.now()];
   this._customerBalanceTemp = 0;
   this._customerBalance = [0];
-  this.temp1 =[];
 }
 
 Account.prototype.deposit = function(amount) {

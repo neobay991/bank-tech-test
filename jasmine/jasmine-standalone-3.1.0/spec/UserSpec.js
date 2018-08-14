@@ -2,10 +2,11 @@
 
 describe("Unit Test: ", function () {
   var user;
+  var account;
   var timerCallback;
 
   beforeEach(function(){
-    user = new User();
+    user = new User(account = new Account);
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().uninstall();
     jasmine.clock().install();

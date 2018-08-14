@@ -1,7 +1,7 @@
 'use strict';
 
-function User(){
-  this._account = new Account;
+function User(account) {
+  this._account = account;
 }
 
 User.prototype.depositMoney = function(amount) {
