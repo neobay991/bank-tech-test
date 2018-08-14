@@ -5,7 +5,7 @@ function Account() {
   this._customerDepositTimeStamp = [Date.now()];
   this._customerBalanceTemp = 0;
   this._customerBalance = [0];
-  this._customerStatement = ["date || credit / debit || balance"];
+  this._customerStatement = [];
 }
 
 Account.prototype.deposit = function(amount) {
@@ -63,5 +63,5 @@ Account.prototype.statement = function() {
 
 Account.prototype.printStatement = function() {
   this.statement();
-  return this._customerStatement;
+  return "date || credit / debit || balance " + this._customerStatement.reverse();
 }

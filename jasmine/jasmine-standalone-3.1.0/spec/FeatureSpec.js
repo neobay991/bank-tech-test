@@ -35,7 +35,7 @@ describe("Feature Test: ", function() {
       user.depositMoney(1000);
       user.depositMoney(2000);
       user.withdrawMoney(-500);
-      expect(user.getAccountStatement()).toEqual([ 'date || credit / debit || balance', '13/8/2018 1000 1000', '13/8/2018 2000 3000', '13/8/2018 -500 2500' ]);
+      expect(user.getAccountStatement()).toEqual('date || credit / debit || balance 13/8/2018 -500 2500,13/8/2018 2000 3000,13/8/2018 1000 1000');
     });
   });
 
