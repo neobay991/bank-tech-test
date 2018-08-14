@@ -22,6 +22,18 @@ So I know how much money I have
 
 ```
 
+Features not implemented
+-------
+```
+* Printing the account statement can be extracted into its own Class
+* Withdrawal of money must take a negative number
+* Customer deposits and withdrawals are stored in the same array, in the future it may be worth separating these
+* Consider allowing customer deposits and withdrawals to take a date argument (currently the date is taken at the time of the deposit and/or withdrawal)
+* Prevent the customer to withdraw more money than their balance
+* Create a front end for the app
+
+```
+
 Tech stack
 -------
 * Full JavaScript vanilla app
@@ -36,7 +48,7 @@ Instructions to Start
 
 Browser console commands:
 * user = new User(account = new Account); - to create a new User object that also initializes an Account object
-* user.depositMoney(amount) - deposit money e.g. user.depositMoney(1000)
-* user.withdrawMoney(-amount) - withdraw money e.g. user.withdrawMoney(-500)
-* user.getBalance - get account balance
-* user.getAccountStatement - get account statement
+* user.depositMoney(amount); - deposit money e.g. user.depositMoney(1000.00);
+* user.withdrawMoney(-amount); - withdraw money e.g. user.withdrawMoney(-500.00);
+* user.getBalance(); - get account balance
+* user.getAccountStatement(); - get account statement e.g. output "date || credit / debit || balance 14/8/2018 -500 2500,14/8/2018 2000 3000,14/8/2018 1000 1000"
