@@ -1,4 +1,4 @@
-
+'use strict';
 
 describe("Unit Test: ", function () {
   var account;

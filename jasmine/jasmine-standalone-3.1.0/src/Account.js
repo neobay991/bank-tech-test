@@ -49,6 +49,7 @@ Account.prototype.statement = function() {
 
   for (var i = 1; i < this._customerDepositWithdrawalTimeStamp.length; ++i) {
     entry = (this._customerDepositWithdrawalTimeStamp[i] + " " + this._customerDeposit[i] + " " + this._customerBalance[i])
+     // Remove this comment to print to console
      // console.log(entry);
   }
   return output + " " + entry;
