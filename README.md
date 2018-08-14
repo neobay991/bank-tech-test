@@ -35,8 +35,8 @@ Instructions to Start
 * You can now run the tests and also use the same window's browser's console to interact with the app
 
 Browser console commands:
-* user = new User === to create a new User object
-* user.depositMoney(amount) === deposit money e.g. user.depositMoney(1000)
-* user.withdrawMoney(-amount) === withdraw money e.g. user.withdrawMoney(-500)
-* user.getBalance === get account balance
-* user.getAccountStatement == get account statement
+* user = new User(account = new Account); - to create a new User object that also initializes an Account object
+* user.depositMoney(amount) - deposit money e.g. user.depositMoney(1000)
+* user.withdrawMoney(-amount) - withdraw money e.g. user.withdrawMoney(-500)
+* user.getBalance - get account balance
+* user.getAccountStatement - get account statement
