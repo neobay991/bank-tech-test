@@ -32,7 +32,6 @@ describe("Unit Test: ", function () {
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
       jasmine.clock().tick(50);
-
       user.depositMoney(1000);
       user.withdrawMoney(-500);
       expect(user.getAccountStatement()).toEqual(['date || credit / debit || balance', '13/8/2018 1000 1000', '13/8/2018 -500 500']);
