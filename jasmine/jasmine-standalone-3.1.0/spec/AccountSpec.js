@@ -13,7 +13,7 @@ describe("Unit Test: ", function () {
 
   describe('Account', function(){
     it('An Account contains an empty default Customer balance', function() {
-      expect(account._customerBalance).toEqual([0]);
+      expect(account.entry.balance).toEqual(0);
     });
 
     it('A User can deposit money into their account', function() {
