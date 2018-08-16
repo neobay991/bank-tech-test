@@ -22,7 +22,7 @@ Account.prototype.deposit = function(amount) {
   this.entry = {
     date: " ",
     deposit: " ",
-    withdrawl: " ",
+    withdrawal: " ",
     balance: 0
   }
 }
@@ -37,7 +37,7 @@ Account.prototype.withdraw = function(amount) {
   this.entry = {
     date: " ",
     deposit: " ",
-    withdrawl: " ",
+    withdrawal: " ",
     balance: 0
   }
 }

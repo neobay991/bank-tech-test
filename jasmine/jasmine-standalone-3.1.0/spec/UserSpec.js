@@ -18,7 +18,7 @@ describe("Unit Test: ", function () {
       account.deposit.and.returnValue(2000);
       account.withdraw.and.returnValue(1000);
       account.balance.and.returnValue(2000);
-      account.printStatement.and.returnValue('date || credit / debit || balance 13/8/2018 -1000 1000,13/8/2018 2000 2000')
+      account.printStatement.and.returnValue("{date: '13/8/2018', deposit: 2000, withdrawal: 0, balance: 2000}, {date: '13/8/2018', deposit: 0, withdrawal: -1000, balance: 1000}")
       account._customerBalance = [0];
     });
 
@@ -43,7 +43,7 @@ describe("Unit Test: ", function () {
       jasmine.clock().tick(50000);
       user.depositMoney(2000);
       user.withdrawMoney(-1000);
-      expect(user.getAccountStatement()).toEqual('date || credit / debit || balance 13/8/2018 -1000 1000,13/8/2018 2000 2000');
+      expect(user.getAccountStatement()).toEqual("{date: '13/8/2018', deposit: 2000, withdrawal: 0, balance: 2000}, {date: '13/8/2018', deposit: 0, withdrawal: -1000, balance: 1000}");
     });
   });
 
