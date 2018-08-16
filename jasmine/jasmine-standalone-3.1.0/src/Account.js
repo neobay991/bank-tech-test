@@ -25,15 +25,14 @@ Account.prototype.deposit = function(amount) {
 }
 
 Account.prototype.withdraw = function(amount) {
-
   if (amount < this.balance()) {
-    var sss = Math.abs(amount) * -1.
-    this.updateBalance(sss);
+    var amount2 = Math.abs(amount) * -1.
+    this.updateBalance(amount2);
     this.entry = {
       date: this.timeStamp(),
       deposit: 0,
-      withdrawal: amount,
-      balance: this.balance(amount)
+      withdrawal: amount2,
+      balance: this.balance(amount2)
     }
     this._transaction.push(this.entry);
     this.resetEntry();
