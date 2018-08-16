@@ -31,7 +31,7 @@ Account.prototype.withdraw = function(amount) {
     this.entry = {
       date: this.timeStamp(),
       deposit: "",
-      withdrawal: amount2,
+      withdrawal: amount,
       balance: this.balance(amount2)
     }
     this._transaction.push(this.entry);
