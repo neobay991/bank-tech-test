@@ -74,13 +74,13 @@ Account.prototype.statement = function() {
   var entry;
 
   for (var i = 0; i < this._transaction.length; ++i) {
-    entry = this._transaction[i];
+    entry = this._transaction[i].date + " || " + this._transaction[i].deposit + " || " + this._transaction[i].withdrawal + " || " + this._transaction[i].balance + " \n ";
 
-    this._accountStatement._customerStatement.push(entry);
+    this._accountStatement.createStatement(entry);
   }
 }
 
 Account.prototype.printStatement = function() {
   this.statement();
-  return this._accountStatement._customerStatement;
+  return this._accountStatement.printStatement();
 }
