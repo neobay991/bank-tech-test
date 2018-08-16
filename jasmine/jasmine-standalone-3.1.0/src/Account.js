@@ -71,13 +71,7 @@ Account.prototype.timeStamp = function() {
 }
 
 Account.prototype.statement = function() {
-  var entry;
-
-  for (var i = 0; i < this._transaction.length; ++i) {
-    entry = this._transaction[i].date + " || " + this._transaction[i].deposit + " || " + this._transaction[i].withdrawal + " || " + this._transaction[i].balance + "\n";
-
-    this._accountStatement.createStatement(entry);
-  }
+  this._accountStatement.createStatement(this._transaction);
 }
 
 Account.prototype.printStatement = function() {
