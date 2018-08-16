@@ -12,7 +12,6 @@ AccountStatement.prototype.createStatement = function(transactions) {
 
     this._customerStatement.push(entry);
   }
-
 }
 
 AccountStatement.prototype.printStatement = function() {
