@@ -25,9 +25,7 @@ So I know how much money I have
 Features not implemented
 -------
 ```
-* Printing the account statement can be extracted into its own Class
 * Withdrawal of money must take a negative number
-* Customer deposits and withdrawals are stored in the same array, in the future it may be worth separating these
 * Consider allowing customer deposits and withdrawals to take a date argument (currently the date is taken at the time of the deposit and/or withdrawal)
 * Prevent the customer to withdraw more money than their balance
 * Create a front end for the app
@@ -47,8 +45,13 @@ Instructions to Start
 * You can now run the tests and also use the same window's browser's console to interact with the app
 
 Browser console commands:
-* user = new User(account = new Account); - to create a new User object that also initializes an Account object
+* accountStatement = new AccountStatement();
+* User = new User(account = new Account(accountStatement));
+OR
+* User = new User(account = new Account(accountStatement = new AccountStatement));
+ - to create a new User object that also initializes an Account and AccountStatement objects
+
 * user.depositMoney(amount); - deposit money e.g. user.depositMoney(1000.00);
 * user.withdrawMoney(-amount); - withdraw money e.g. user.withdrawMoney(-500.00);
 * user.getBalance(); - get account balance
-* user.getAccountStatement(); - get account statement e.g. output "date || credit / debit || balance 14/8/2018 -500 2500,14/8/2018 2000 3000,14/8/2018 1000 1000"
+* user.getAccountStatement(); - get account statement e.g. output "{date: "14/8/2018", deposit: 2000, withdrawal: 0, balance: 2000}, {date: "13/8/2018", deposit: 0, withdrawal: -500, balance: 1500}"
