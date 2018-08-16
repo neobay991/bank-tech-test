@@ -2,9 +2,13 @@
 
 describe("Unit Test: ", function () {
   var account;
+  var timerCallback;
 
   beforeEach(function(){
     account = new Account();
+    timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.clock().uninstall();
+    jasmine.clock().install();
   });
 
   describe('Account', function(){
@@ -17,9 +21,11 @@ describe("Unit Test: ", function () {
       expect(account.balance()).toEqual(1000);
     });
 
-    it('A deposit has a timestamp', function() {
-      account.deposit(1000);
-      expect(account.balanceTimeStamp().length).toEqual(2);
+    it('#timestamp', function() {
+      var baseTime = new Date(2018, 7, 13);
+      jasmine.clock().mockDate(baseTime);
+      jasmine.clock().tick(50000);
+      expect(account.timeStamp()).toEqual('13/8/2018');
     });
 
     it('A withdrawal has a timestamp', function() {
