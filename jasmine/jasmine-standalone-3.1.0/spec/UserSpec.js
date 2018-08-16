@@ -22,22 +22,22 @@ describe("Unit Test: ", function () {
       account._customerBalance = [0];
     });
 
-    it('A User has an account with a zero balance', function() {
+    it('#initialize', function() {
       expect(user._account._customerBalance).toEqual([0]);
     });
 
-    it('#deposit', function() {
+    it('#depositMoney', function() {
       user.depositMoney(2000);
       expect(user.getBalance()).toEqual(2000);
     });
 
-    it('#withdraw', function() {
+    it('#withdrawMoney', function() {
       user.depositMoney(3000);
       user.withdrawMoney(-1000);
       expect(user.getBalance()).toEqual(2000);
     });
 
-    it('A User can get an account statement', function() {
+    it('getAccountStatement', function() {
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
       jasmine.clock().tick(50000);
