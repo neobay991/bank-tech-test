@@ -43,13 +43,13 @@ Instructions to Start
 * You can now run the tests and also use the same window's browser's console to interact with the app
 
 Browser console commands:
-* accountStatement = new AccountStatement();
-* User = new User(account = new Account(accountStatement));
-OR
-* User = new User(account = new Account(accountStatement = new AccountStatement));
- - to create a new User object that also initializes an Account and AccountStatement objects
-
-* user.depositMoney(amount); - deposit money e.g. user.depositMoney(1000.00);
-* user.withdrawMoney(amount); - withdraw money e.g. user.withdrawMoney(500.00);
-* user.getBalance(); - get account balance
-* user.getAccountStatement(); - get account statement e.g. output "{date: "14/8/2018", deposit: 2000, withdrawal: 0, balance: 2000}, {date: "13/8/2018", deposit: 0, withdrawal: -500, balance: 1500}"
+* account = new Account(accountStatement = new AccountStatement);
+ - to create a new Account object that also initializes an AccountStatement objects
+* account.deposit(amount); - deposit money e.g. account.deposit(1000.00);
+* account.withdraw(amount); - withdraw money e.g. account.withdraw(500.00);
+* account.balance(); - get account balance
+* account.printStatement(); - get account statement e.g. output:
+"date || credit || debit || balance
+ 16/8/2018 ||  || 500 || 1500
+,16/8/2018 || 1000 ||  || 2000
+,16/8/2018 || 1000 ||  || 1000
