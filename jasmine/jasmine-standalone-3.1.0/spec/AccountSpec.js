@@ -3,9 +3,11 @@
 describe("Unit Test: ", function () {
   var account;
   var timerCallback;
+  var accountStatement;
 
   beforeEach(function(){
-    account = new Account();
+    accountStatement = new AccountStatement();
+    account = new Account(accountStatement);
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().uninstall();
     jasmine.clock().install();
@@ -48,8 +50,8 @@ describe("Unit Test: ", function () {
     });
 
     it('#printStatement', function() {
-      account._customerStatement.push("{ date: '13/8/2018', deposit: 30, withdrawal: 0, balance: 30 }")
-      expect(account.printStatement()).toEqual(account._customerStatement);
+      account._accountStatement._customerStatement.push("{ date: '13/8/2018', deposit: 30, withdrawal: 0, balance: 30 }")
+      expect(account.printStatement()).toEqual(account._accountStatement._customerStatement);
     });
 
   });

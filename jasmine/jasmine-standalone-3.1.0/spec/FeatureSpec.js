@@ -3,10 +3,13 @@
 describe("Feature Test: ", function() {
   var user;
   var account;
+  var accountStatement;
   var timerCallback;
 
   beforeEach(function(){
-    user = new User(account = new Account);
+    accountStatement = new AccountStatement();
+    account = new Account(accountStatement);
+    user = new User(account);
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().uninstall();
     jasmine.clock().install();

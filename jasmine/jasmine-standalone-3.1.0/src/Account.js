@@ -7,9 +7,9 @@ function Account(accountStatement) {
     withdrawal: " ",
     balance: 0
   }
-  this._customerStatement = [];
   this._transaction = [];
   this._customerBalance = [];
+  this._accountStatement = accountStatement;
 }
 
 Account.prototype.deposit = function(amount) {
@@ -71,11 +71,11 @@ Account.prototype.statement = function() {
   for (var i = 0; i < this._transaction.length; ++i) {
     entry = this._transaction[i];
 
-    this._customerStatement.push(entry);
+    this._accountStatement._customerStatement.push(entry);
   }
 }
 
 Account.prototype.printStatement = function() {
   this.statement();
-  return this._customerStatement;
+  return this._accountStatement._customerStatement;
 }
