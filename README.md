@@ -50,6 +50,6 @@ OR
  - to create a new User object that also initializes an Account and AccountStatement objects
 
 * user.depositMoney(amount); - deposit money e.g. user.depositMoney(1000.00);
-* user.withdrawMoney(-amount); - withdraw money e.g. user.withdrawMoney(-500.00);
+* user.withdrawMoney(amount); - withdraw money e.g. user.withdrawMoney(500.00);
 * user.getBalance(); - get account balance
 * user.getAccountStatement(); - get account statement e.g. output "{date: "14/8/2018", deposit: 2000, withdrawal: 0, balance: 2000}, {date: "13/8/2018", deposit: 0, withdrawal: -500, balance: 1500}"

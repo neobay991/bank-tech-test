@@ -43,7 +43,7 @@ describe("Feature Test: ", function() {
       accountStatement._customerStatement = [];
       user.depositMoney(1000);
       user.depositMoney(2000);
-      user.withdrawMoney(-500);
+      user.withdrawMoney(500);
       expect(user.getAccountStatement()).toEqual(user._account._transaction);
     });
   });
@@ -56,7 +56,7 @@ describe("Feature Test: ", function() {
       accountStatement._customerStatement = [];
       user.depositMoney(1000);
       user.depositMoney(2000);
-      user.withdrawMoney(-500);
+      user.withdrawMoney(500);
       expect(user.getAccountStatement()).toEqual(user._account._transaction);
     });
   });

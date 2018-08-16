@@ -28,7 +28,7 @@ describe("Unit Test: ", function () {
 
     it('#withdrawal', function() {
       account._customerBalance.push(1000);
-      account.withdraw(-500);
+      account.withdraw(500);
       expect(account.balance()).toEqual(500);
     });
 
