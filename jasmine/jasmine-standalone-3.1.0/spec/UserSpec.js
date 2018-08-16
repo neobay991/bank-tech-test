@@ -37,7 +37,7 @@ describe("Unit Test: ", function () {
       expect(user.getBalance()).toEqual(2000);
     });
 
-    it('getAccountStatement', function() {
+    it('#getAccountStatement', function() {
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
       jasmine.clock().tick(50000);
