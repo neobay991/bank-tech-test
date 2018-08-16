@@ -12,12 +12,31 @@ describe("Unit Test: ", function () {
   });
 
   describe('Account', function(){
-    it('An Account contains an empty default Customer balance', function() {
+    it('#initialize', function() {
+      expect(account.entry.date).toEqual(" ");
+      expect(account.entry.deposit).toEqual(" ");
+      expect(account.entry.withdrawal).toEqual(" ");
       expect(account.entry.balance).toEqual(0);
     });
 
-    it('A User can deposit money into their account', function() {
+    it('#deposit', function() {
       account.deposit(1000);
+      expect(account.balance()).toEqual(1000);
+    });
+
+    it('#withdrawal', function() {
+      account._customerBalance.push(1000);
+      account.withdraw(-500);
+      expect(account.balance()).toEqual(500);
+    });
+
+    it('#updateBalance', function() {
+      account.updateBalance(1000)
+      expect(account._customerBalance).toEqual([1000]);
+    });
+
+    it('#balance', function() {
+      account.updateBalance(1000)
       expect(account.balance()).toEqual(1000);
     });
 
@@ -28,11 +47,11 @@ describe("Unit Test: ", function () {
       expect(account.timeStamp()).toEqual('13/8/2018');
     });
 
-    it('A withdrawal has a timestamp', function() {
-      account.deposit(1000);
-      account.withdraw(-500);
-      expect(account.balanceTimeStamp().length).toEqual(3);
+    it('#printStatement', function() {
+      account._customerStatement.push("{ date: '13/8/2018', deposit: 30, withdrawal: 0, balance: 30 }")
+      expect(account.printStatement()).toEqual(account._customerStatement);
     });
+
   });
 
 });

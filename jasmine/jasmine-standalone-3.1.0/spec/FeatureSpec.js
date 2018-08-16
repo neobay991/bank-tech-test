@@ -35,7 +35,7 @@ describe("Feature Test: ", function() {
       user.depositMoney(1000);
       user.depositMoney(2000);
       user.withdrawMoney(-500);
-      expect(user.getAccountStatement()).toContain('date: '13/8/2018', deposit: 1000, withdrawl: 0, balance: 1000 }), Object({ date: '13/8/2018', deposit: 2000, withdrawl: 0, balance: 3000 }), Object({ date: '13/8/2018', deposit: 0, withdrawl: -500, balance: 2500');
+      expect(user.getAccountStatement()).toEqual(user._account._transaction);
     });
   });
 

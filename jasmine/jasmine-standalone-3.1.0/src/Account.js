@@ -4,7 +4,7 @@ function Account(accountStatement) {
   this.entry = {
     date: " ",
     deposit: " ",
-    withdrawl: " ",
+    withdrawal: " ",
     balance: 0
   }
   this._customerStatement = [];
@@ -16,7 +16,22 @@ Account.prototype.deposit = function(amount) {
   this.updateBalance(amount);
   this.entry.date = this.timeStamp();
   this.entry.deposit = amount;
-  this.entry.withdrawl = 0;
+  this.entry.withdrawal = 0;
+  this.entry.balance = this.balance(amount);
+  this._transaction.push(this.entry);
+  this.entry = {
+    date: " ",
+    deposit: " ",
+    withdrawl: " ",
+    balance: 0
+  }
+}
+
+Account.prototype.withdraw = function(amount) {
+  this.updateBalance(amount);
+  this.entry.date = this.timeStamp();
+  this.entry.deposit = 0;
+  this.entry.withdrawal = amount;
   this.entry.balance = this.balance(amount);
   this._transaction.push(this.entry);
   this.entry = {
@@ -37,21 +52,6 @@ Account.prototype.balance = function() {
   return balance;
 }
 
-Account.prototype.withdraw = function(amount) {
-  this.updateBalance(amount);
-  this.entry.date = this.timeStamp();
-  this.entry.deposit = 0;
-  this.entry.withdrawl = amount;
-  this.entry.balance = this.balance(amount);
-  this._transaction.push(this.entry);
-  this.entry = {
-    date: " ",
-    deposit: " ",
-    withdrawl: " ",
-    balance: 0
-  }
-}
-
 Account.prototype.timeStamp = function() {
   var today = new Date();
   var dd = today.getDate();
@@ -65,8 +65,8 @@ Account.prototype.timeStamp = function() {
 Account.prototype.statement = function() {
   var entry;
 
-  for (var i = 0; i < this.transaction.length; ++i) {
-    entry = this.transaction[i];
+  for (var i = 0; i < this._transaction.length; ++i) {
+    entry = this._transaction[i];
 
     this._customerStatement.push(entry);
   }
