@@ -1,7 +1,7 @@
 'use strict';
 
 function AccountStatement() {
-  this._customerStatement = [];
+  this._customerStatement = ["date || credit || debit || balance "];
 }
 
 AccountStatement.prototype.printStatement = function() {
