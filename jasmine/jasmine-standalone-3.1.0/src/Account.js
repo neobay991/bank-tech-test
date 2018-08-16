@@ -70,11 +70,7 @@ Account.prototype.timeStamp = function() {
   return timestamp = today;
 }
 
-Account.prototype.statement = function() {
-  this._accountStatement.createStatement(this._transaction);
-}
-
 Account.prototype.printStatement = function() {
-  this.statement();
+  this._accountStatement.createStatement(this._transaction);
   return this._accountStatement.printStatement();
 }
