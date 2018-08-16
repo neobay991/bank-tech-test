@@ -40,9 +40,9 @@ describe("Feature Test: ", function() {
       jasmine.clock().tick(50);
       accountStatement._customerStatement = [];
       account.deposit(1000);
-      // account.deposit(2000);
-      // account.withdraw(500);
-      expect(account.printStatement()).toContain("13/8/2018 || 0 || 1000 || 1000");
+      account.deposit(2000);
+      account.withdraw(500);
+      expect(account.printStatement()).toContain("date || credit || debit || balance \n 13/8/2018 || 0 || -500 || 2500\n,13/8/2018 || 0 || 2000 || 3000\n,13/8/2018 || 0 || 1000 || 1000");
     });
   });
 
