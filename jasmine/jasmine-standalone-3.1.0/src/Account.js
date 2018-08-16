@@ -16,8 +16,8 @@ Account.prototype.deposit = function(amount) {
   this.updateBalance(amount);
   this.entry = {
     date: this.timeStamp(),
-    deposit: 0,
-    withdrawal: amount,
+    deposit: amount,
+    withdrawal: 0,
     balance: this.balance(amount)
   }
   this._transaction.push(this.entry);
