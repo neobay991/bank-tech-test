@@ -14,26 +14,29 @@ function Account(accountStatement) {
 
 Account.prototype.deposit = function(amount) {
   this.updateBalance(amount);
-  this.entry.date = this.timeStamp();
-  this.entry.deposit = amount;
-  this.entry.withdrawal = 0;
-  this.entry.balance = this.balance(amount);
-  this._transaction.push(this.entry);
   this.entry = {
-    date: " ",
-    deposit: " ",
-    withdrawal: " ",
-    balance: 0
+    date: this.timeStamp(),
+    deposit: 0,
+    withdrawal: amount,
+    balance: this.balance(amount)
   }
+  this._transaction.push(this.entry);
+  this.resetEntry();
 }
 
 Account.prototype.withdraw = function(amount) {
   this.updateBalance(amount);
-  this.entry.date = this.timeStamp();
-  this.entry.deposit = 0;
-  this.entry.withdrawal = amount;
-  this.entry.balance = this.balance(amount);
+  this.entry = {
+    date: this.timeStamp(),
+    deposit: 0,
+    withdrawal: amount,
+    balance: this.balance(amount)
+  }
   this._transaction.push(this.entry);
+  this.resetEntry();
+}
+
+Account.prototype.resetEntry = function(amount) {
   this.entry = {
     date: " ",
     deposit: " ",
