@@ -74,7 +74,7 @@ Account.prototype.statement = function() {
   var entry;
 
   for (var i = 0; i < this._transaction.length; ++i) {
-    entry = this._transaction[i].date + " || " + this._transaction[i].deposit + " || " + this._transaction[i].withdrawal + " || " + this._transaction[i].balance + " \n ";
+    entry = this._transaction[i].date + " || " + this._transaction[i].deposit + " || " + this._transaction[i].withdrawal + " || " + this._transaction[i].balance + "\n";
 
     this._accountStatement.createStatement(entry);
   }
@@ -82,5 +82,5 @@ Account.prototype.statement = function() {
 
 Account.prototype.printStatement = function() {
   this.statement();
-  return this._accountStatement.printStatement();
+  return this._accountStatement.printStatement2();
 }

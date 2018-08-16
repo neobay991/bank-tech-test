@@ -9,6 +9,6 @@ AccountStatement.prototype.createStatement = function(entry) {
 }
 
 
-AccountStatement.prototype.printStatement = function() {
+AccountStatement.prototype.printStatement2 = function() {
   return "date || credit || debit || balance \n " + this._customerStatement.reverse();
 }

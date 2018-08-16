@@ -6,7 +6,8 @@ describe("Unit Test: ", function () {
   var accountStatement;
 
   beforeEach(function(){
-    accountStatement = jasmine.createSpy('accountStatement');
+    // accountStatement = jasmine.createSpyObj('accountStatement', ['createStatement']);
+    accountStatement = new AccountStatement();
     account = new Account(accountStatement);
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().uninstall();
@@ -61,10 +62,12 @@ describe("Unit Test: ", function () {
       expect(account.entry.balance).toEqual(0);
     });
 
-    xit('#printStatement', function() {
-      accountStatement._customerStatement = ["date || credit || debit || balance "];
-      account._accountStatement._customerStatement.push("{ 13/8/2018 || 500.00 || || 500.00 }")
-      expect(account.printStatement()).toEqual("[ 'date || credit || debit || balance 13/8/2018 || 500.00 || || 500.00', 'date || credit || debit || balance ' ] ");
+    it('#printStatement', function() {
+      // accountStatement._customerStatement = ["date || credit || debit || balance ", "{ 13/8/2018 || 500.00 || || 500.00 }"];
+
+      // accountStatement.createStatement.and.returnValue("13/8/2018 || 500.00 || || 500.00");
+      accountStatement._customerStatement.push("13/8/2018 || 500.00 || || 500.00")
+      expect(account.printStatement()).toEqual("date || credit || debit || balance \n 13/8/2018 || 500.00 || || 500.00");
     });
 
   });
