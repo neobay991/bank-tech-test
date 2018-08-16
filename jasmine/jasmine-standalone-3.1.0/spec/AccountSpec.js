@@ -54,6 +54,13 @@ describe("Unit Test: ", function () {
       expect(account.timeStamp()).toEqual('13/8/2018');
     });
 
+    it('#reset', function() {
+      expect(account.entry.date).toEqual(" ");
+      expect(account.entry.deposit).toEqual(" ");
+      expect(account.entry.withdrawal).toEqual(" ");
+      expect(account.entry.balance).toEqual(0);
+    });
+
     it('#printStatement', function() {
       accountStatement._customerStatement = [];
       account._accountStatement._customerStatement.push("{ date: '13/8/2018', deposit: 30, withdrawal: 0, balance: 30 }")
