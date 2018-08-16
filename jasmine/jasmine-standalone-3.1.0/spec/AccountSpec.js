@@ -32,6 +32,11 @@ describe("Unit Test: ", function () {
       expect(account.balance()).toEqual(500);
     });
 
+    it('#withdrawal error', function() {
+      account.withdraw(500);
+      expect(account.withdraw()).toEqual("You do not have enough funds in your account");
+    });
+
     it('#updateBalance', function() {
       account.updateBalance(1000)
       expect(account._customerBalance).toEqual([1000]);

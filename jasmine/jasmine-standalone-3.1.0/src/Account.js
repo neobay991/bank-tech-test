@@ -25,15 +25,21 @@ Account.prototype.deposit = function(amount) {
 }
 
 Account.prototype.withdraw = function(amount) {
-  this.updateBalance(amount);
-  this.entry = {
-    date: this.timeStamp(),
-    deposit: 0,
-    withdrawal: amount,
-    balance: this.balance(amount)
+
+  if (amount < this.balance()) {
+    var sss = Math.abs(amount) * -1.
+    this.updateBalance(sss);
+    this.entry = {
+      date: this.timeStamp(),
+      deposit: 0,
+      withdrawal: amount,
+      balance: this.balance(amount)
+    }
+    this._transaction.push(this.entry);
+    this.resetEntry();
+  } else {
+    return "You do not have enough funds in your account"
   }
-  this._transaction.push(this.entry);
-  this.resetEntry();
 }
 
 Account.prototype.resetEntry = function(amount) {

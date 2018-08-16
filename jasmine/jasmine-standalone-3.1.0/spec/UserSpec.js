@@ -37,6 +37,12 @@ describe("Unit Test: ", function () {
       expect(user.getBalance()).toEqual(2000);
     });
 
+    it('#withdrawMoney error', function() {
+      account.balance.and.returnValue(0);
+      user.withdrawMoney(-1000);
+      expect(user.getBalance()).toEqual(0);
+    });
+
     it('#getAccountStatement', function() {
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
