@@ -25,9 +25,7 @@ So I know how much money I have
 Features not implemented
 -------
 ```
-* Withdrawal of money must take a negative number
 * Consider allowing customer deposits and withdrawals to take a date argument (currently the date is taken at the time of the deposit and/or withdrawal)
-* Prevent the customer to withdraw more money than their balance
 * Create a front end for the app
 
 ```
