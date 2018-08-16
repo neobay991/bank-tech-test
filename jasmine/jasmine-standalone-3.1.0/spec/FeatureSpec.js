@@ -35,6 +35,7 @@ describe("Feature Test: ", function() {
       var baseTime = new Date(2018, 7, 13);
       jasmine.clock().mockDate(baseTime);
       jasmine.clock().tick(50);
+      accountStatement._customerStatement = [];
       user.depositMoney(1000);
       user.depositMoney(2000);
       user.withdrawMoney(-500);
