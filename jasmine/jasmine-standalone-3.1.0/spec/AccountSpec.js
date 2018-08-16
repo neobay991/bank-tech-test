@@ -6,8 +6,8 @@ describe("Unit Test: ", function () {
   var accountStatement;
 
   beforeEach(function(){
-    // accountStatement = jasmine.createSpyObj('accountStatement', ['createStatement']);
-    accountStatement = new AccountStatement();
+    accountStatement = jasmine.createSpyObj('accountStatement', ['createStatement', 'printStatement']);
+    // accountStatement = new AccountStatement();
     account = new Account(accountStatement);
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().uninstall();
@@ -63,10 +63,8 @@ describe("Unit Test: ", function () {
     });
 
     it('#printStatement', function() {
-      // accountStatement._customerStatement = ["date || credit || debit || balance ", "{ 13/8/2018 || 500.00 || || 500.00 }"];
-
-      // accountStatement.createStatement.and.returnValue("13/8/2018 || 500.00 || || 500.00");
-      accountStatement._customerStatement.push("13/8/2018 || 500.00 || || 500.00")
+      accountStatement.createStatement.and.returnValue("13/8/2018 || 500.00 || || 500.00");
+      accountStatement.printStatement.and.returnValue("date || credit || debit || balance \n 13/8/2018 || 500.00 || || 500.00");
       expect(account.printStatement()).toEqual("date || credit || debit || balance \n 13/8/2018 || 500.00 || || 500.00");
     });
 

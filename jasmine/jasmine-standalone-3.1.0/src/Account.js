@@ -82,5 +82,5 @@ Account.prototype.statement = function() {
 
 Account.prototype.printStatement = function() {
   this.statement();
-  return this._accountStatement.printStatement2();
+  return this._accountStatement.printStatement();
 }

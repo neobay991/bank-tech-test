@@ -9,8 +9,8 @@ describe("Unit Test: ", function () {
 
   describe('AccountStatement', function(){
     it('#printStatement', function() {
-      accountStatement._customerStatement.push("date || credit || debit || balance 13/8/2018 || 500.00 || || 500.00")
-      expect(accountStatement.printStatement()).toEqual("date || credit || debit || balance \n date || credit || debit || balance 13/8/2018 || 500.00 || || 500.00");
+      accountStatement._customerStatement.push("13/8/2018 || 500.00 || || 500.00")
+      expect(accountStatement.printStatement()).toEqual("date || credit || debit || balance \n 13/8/2018 || 500.00 || || 500.00");
     });
 
   });
