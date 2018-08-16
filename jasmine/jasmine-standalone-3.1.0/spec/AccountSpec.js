@@ -24,7 +24,7 @@ describe("Unit Test: ", function () {
     });
 
     describe('#deposit', function(){
-      it('Deposits money into account balance', function() {
+      it('Deposits/ adds money into account balance', function() {
         account.deposit(1000);
         expect(account.balance()).toEqual(1000);
       });

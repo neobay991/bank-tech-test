@@ -42,7 +42,7 @@ describe("Feature Test: ", function() {
       account.deposit(1000);
       account.deposit(2000);
       account.withdraw(500);
-      expect(account.printStatement()).toContain("date || credit || debit || balance \n 13/8/2018 || 0 || -500 || 2500\n,13/8/2018 || 2000 || 0 || 3000\n,13/8/2018 || 1000 || 0 || 1000");
+      expect(account.printStatement()).toContain("date || credit || debit || balance \n 13/8/2018 ||  || -500 || 2500\n,13/8/2018 || 2000 ||  || 3000\n,13/8/2018 || 1000 ||  || 1000");
     });
   });
 
